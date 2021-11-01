@@ -6,7 +6,6 @@ Neovim settings and instructions to migrate to any machine.
 ```bash
 sudo apt install neovim
 mkdir -p ~/.config/nvim
-touch ~/.config/nvim/init.vim
 git clone https://github.com/tomasemilio/nvim_settings ~/.config/nvim/
 ```
 
