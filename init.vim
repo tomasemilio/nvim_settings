@@ -5,8 +5,6 @@ set hlsearch
 set tabstop=4 softtabstop=4
 set number
 
-" Font and size
-set guifont=Consolas
 
 " Vim plugin is a simple installer
 call plug#begin('~/.config/nvim/plugged')
