@@ -24,7 +24,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'overcache/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'typeintandem/nvim'
 
 call plug#end()
 
