@@ -24,6 +24,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'overcache/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'jbyuki/instant.nvim'
 
 call plug#end()
 
@@ -64,4 +65,6 @@ let g:neosolarized_italic=1
 let g:neosolarized_termBoldAsBright=1
 colorscheme NeoSolarized
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""INSTANTVIM""""""""""""""""""""""""""""
+let g:instant_username = "tomasemilio"
+
