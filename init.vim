@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'overcache/NeoSolarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -44,7 +46,7 @@ autocmd VimEnter * wincmd k
 autocmd VimEnter * vs
 autocmd VimEnter * wincmd j
 autocmd VimEnter * resize -20
-tnoremap <Esc> <C-\><C-n>:
+tnoremap <Esc> <C-\><C-n>
 
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
 syntax enable
