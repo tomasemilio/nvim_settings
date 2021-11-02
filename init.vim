@@ -39,12 +39,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Open terminal and another pane by default
-set splitright splitbelow
+set splitright 
 " Options to have a grid with 3 windows and 1 terminal incorporated.
 autocmd VimEnter * sp | terminal
-autocmd VimEnter * wincmd k
-autocmd VimEnter * vs
-autocmd VimEnter * wincmd j
 autocmd VimEnter * resize -20
 tnoremap <Esc> <C-\><C-n>
 
