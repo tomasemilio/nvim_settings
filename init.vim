@@ -1,9 +1,9 @@
-"""""""""""""""""""""""BASIC OPTIONS""""""""""""""""""""""""""""
-set nocompatible
+"""""""""""""""""""""""BASIC OPTIONS"""""""""""""""""""""""""""" set nocompatible
 filetype off
 set hlsearch
 set tabstop=4 softtabstop=4
 set number
+syntax enable
 
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
@@ -21,16 +21,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'overcache/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
-
-"""""""""""""""""""""""NERDTREE""""""""""""""""""""""""""""
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-let NERDTreeShowHidden = 1
 
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
 " Move between panes
@@ -39,26 +34,24 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Open terminal and another pane by default
-set splitright 
+set splitbelow splitright 
 " Options to have a grid with 3 windows and 1 terminal incorporated.
 autocmd VimEnter * sp | terminal
-autocmd VimEnter * resize -20
+autocmd VimEnter * resize -15
 tnoremap <Esc> <C-\><C-n>
 
-"""""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-syntax enable
-set termguicolors
-set winblend=0
-set wildoptions=pum
-set pumblend=5
-set background=dark
-let g:neosolarized_termtrans=1
-let g:neosolarized_contrast="normal"
-let g:neosolarized_visibility="normal"
-let g:neosolarized_bold=1
-let g:neosolarized_underline=1
-let g:neosolarized_italic=1
-let g:neosolarized_termBoldAsBright=1
-colorscheme NeoSolarized
+"""""""""""""""""""""""NERDTREE""""""""""""""""""""""""""""
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+let NERDTreeShowHidden = 1
 
+"""""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+colorscheme tender
+
+let g:lightline = { 'colorscheme': 'tender' }
 
