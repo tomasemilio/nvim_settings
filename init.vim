@@ -1,4 +1,5 @@
-"""""""""""""""""""""""BASIC OPTIONS"""""""""""""""""""""""""""" set nocompatible
+"""""""""""""""""""""""BASIC OPTIONS""""""""""""""""""""""""""""
+set nocompatible
 filetype off
 set hlsearch
 set tabstop=4 softtabstop=4
@@ -23,9 +24,14 @@ Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jacoborus/tender.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 call plug#end()
+
+"""""""""""""""""""""""NERDTREE""""""""""""""""""""""""""""
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+let NERDTreeShowHidden = 1
 
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
 " Move between panes
@@ -34,24 +40,24 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Open terminal and another pane by default
-set splitbelow splitright 
+set splitright 
 " Options to have a grid with 3 windows and 1 terminal incorporated.
 autocmd VimEnter * sp | terminal
-autocmd VimEnter * resize -15
+autocmd VimEnter * resize -25
+autocmd VimEnter * wincmd j
+autocmd VimEnter * vs
+autocmd VimEnter * vs
+
 tnoremap <Esc> <C-\><C-n>
 
-"""""""""""""""""""""""NERDTREE""""""""""""""""""""""""""""
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-let NERDTreeShowHidden = 1
-
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'default'
+colorscheme material
 
-if (has("termguicolors"))
- set termguicolors
+if (has('termguicolors'))
+  set termguicolors
 endif
 
-colorscheme tender
-
-let g:lightline = { 'colorscheme': 'tender' }
+let g:airline_theme = 'material'
 
