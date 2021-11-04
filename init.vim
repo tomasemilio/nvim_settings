@@ -25,6 +25,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -51,13 +52,12 @@ autocmd VimEnter * vs
 tnoremap <Esc> <C-\><C-n>
 
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'default'
 colorscheme material
 
 if (has('termguicolors'))
   set termguicolors
 endif
 
+let g:material_terminal_italics = 1
 let g:airline_theme = 'material'
 
