@@ -5,6 +5,7 @@ set hlsearch
 set tabstop=4 softtabstop=4
 set number
 syntax enable
+set clipboard=unnamedplus
 
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
@@ -24,8 +25,11 @@ Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+Plug 'lukas-reineke/indent-blankline.nvim'
+"""" Colorschemes
+"Plug 'morhetz/gruvbox'
+Plug 'overcache/NeoSolarized'
 
 call plug#end()
 
@@ -52,12 +56,15 @@ autocmd VimEnter * vs
 tnoremap <Esc> <C-\><C-n>
 
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-colorscheme material
+colorscheme NeoSolarized
 
 if (has('termguicolors'))
   set termguicolors
 endif
 
-let g:material_terminal_italics = 1
-let g:airline_theme = 'material'
+let g:neosolarized_italic = 1
+
+
+
+
 
