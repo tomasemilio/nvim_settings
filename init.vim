@@ -28,8 +28,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 """" Colorschemes
-"Plug 'morhetz/gruvbox'
-Plug 'overcache/NeoSolarized'
+Plug 'morhetz/gruvbox'
+"Plug 'overcache/NeoSolarized'
 
 call plug#end()
 
@@ -56,15 +56,20 @@ autocmd VimEnter * vs
 tnoremap <Esc> <C-\><C-n>
 
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-colorscheme NeoSolarized
-
 if (has('termguicolors'))
   set termguicolors
 endif
 
-let g:neosolarized_italic = 1
+" NeoSolarized Colorscheme
+"let g:neosolarized_italic = 1
+"let g:neosolarized_vertSplitBgTrans = 1
+"let g:neosolarized_termtrans = 1
 
+"set winblend=0
+"set wildoptions=pum
+"set pumblend=5
+"set background=dark
 
-
+colorscheme gruvbox
 
 
