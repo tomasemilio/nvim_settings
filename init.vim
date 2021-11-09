@@ -50,8 +50,6 @@ set splitright
 autocmd VimEnter * sp | terminal
 autocmd VimEnter * resize -25
 autocmd VimEnter * wincmd j
-autocmd VimEnter * vs
-autocmd VimEnter * vs
 
 tnoremap <Esc> <C-\><C-n>
 
