@@ -21,20 +21,18 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'preservim/nerdtree'
 """" Colorschemes
 Plug 'morhetz/gruvbox'
-"Plug 'overcache/NeoSolarized'
 
 call plug#end()
 
-"""""""""""""""""""""""NERDTREE""""""""""""""""""""""""""""
-" Start NERDTree and put the cursor back in the other window.
+"""""""""""""""""""""""NERD TREE""""""""""""""""""""""""""""
 autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeShowHidden = 1
 
@@ -49,6 +47,7 @@ set splitright
 " Options to have a grid with 3 windows and 1 terminal incorporated.
 autocmd VimEnter * sp | terminal
 autocmd VimEnter * resize -25
+autocmd VimEnter * vs | terminal
 autocmd VimEnter * wincmd j
 
 tnoremap <Esc> <C-\><C-n>
@@ -57,16 +56,6 @@ tnoremap <Esc> <C-\><C-n>
 if (has('termguicolors'))
   set termguicolors
 endif
-
-" NeoSolarized Colorscheme
-"let g:neosolarized_italic = 1
-"let g:neosolarized_vertSplitBgTrans = 1
-"let g:neosolarized_termtrans = 1
-
-"set winblend=0
-"set wildoptions=pum
-"set pumblend=5
-"set background=dark
 
 colorscheme gruvbox
 
