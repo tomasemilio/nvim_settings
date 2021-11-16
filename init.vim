@@ -3,6 +3,7 @@ filetype off
 set nocompatible
 set nohlsearch
 set tabstop=4 softtabstop=4
+set foldmethod=indent
 set number
 set nowrap
 set noswapfile
@@ -10,9 +11,9 @@ set nobackup
 set incsearch
 set scrolloff=8
 set termguicolors
-set splitright 
+set splitright "Pane splitting, also add splitbelow
 syntax enable
-set clipboard=unnamedplus
+set clipboard=unnamedplus "Yank to clipboard
 
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
@@ -34,7 +35,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-"""" Colorschemes
 Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
@@ -49,13 +49,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-" Open terminal and another pane by default
-" Options to have a grid with 3 windows and 1 terminal incorporated.
-"augroup Navigation
-"	autocmd VimEnter * sp | terminal
-"	autocmd VimEnter * resize -20
-"	autocmd VimEnter * wincmd j
-"augroup END
+
+augroup Navigation
+	autocmd VimEnter * vs
+	"autocmd VimEnter * sp | terminal
+	"autocmd VimEnter * resize -20
+	"autocmd VimEnter * wincmd j
+augroup END
 
 tnoremap <Esc> <C-\><C-n>
 
@@ -67,7 +67,7 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  ignore_install = { }, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = { "c", "rust" },  -- list of language that will be disabled
@@ -87,5 +87,12 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+lua << EOF
+require('telescope').setup{
+	defaults = { file_ignore_patterns = {"env/"}
+    }
+}
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
