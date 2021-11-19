@@ -53,6 +53,9 @@ Plug 'neovim/nvim-lspconfig'
 "Closing pairs
 Plug 'jiangmiao/auto-pairs'
 
+"Transparent background
+Plug 'xiyaowong/nvim-transparent'
+
 call plug#end()
 
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
@@ -76,6 +79,9 @@ tnoremap <Esc> <C-\><C-n>
 
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
 colorscheme gruvbox
+
+"""""""""""""""""""""""TRANSPARANCY""""""""""""""""""""""""""""
+let g:transparent_enabled = v:true
 
 """""""""""""""""""""""TREESITTER ENABLE ALL""""""""""""""""""""""""""""
 lua <<EOF
