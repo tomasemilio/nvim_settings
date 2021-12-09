@@ -46,13 +46,13 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 "Colorscheme
-Plug 'gruvbox-community/gruvbox'
-
+" Plug 'gruvbox-community/gruvbox'
+Plug  'overcache/NeoSolarized'
+"
 "LSP Config
 Plug 'neovim/nvim-lspconfig'
 
 "Autocompletion
-Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -68,9 +68,15 @@ Plug 'xiyaowong/nvim-transparent'
 " Comment
 Plug 'tpope/vim-commentary'
 
+" Copilot
+" Plug 'github/copilot.vim'
+
+
 call plug#end()
 
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
+let mapleader = " "
+
 " Move between panes
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -82,6 +88,9 @@ nnoremap <M-k> :resize +2<CR>
 nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
+
+nnoremap <C-z> :vs \| :sp \| :wincmd h \| :sp<CR>
+
 augroup Navigation
 	"autocmd VimEnter * vs
 	"autocmd VimEnter * wincmd j
@@ -90,7 +99,8 @@ augroup END
 tnoremap <Esc> <C-\><C-n>
 
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme NeoSolarized
 
 """""""""""""""""""""""TRANSPARANCY""""""""""""""""""""""""""""
 let g:transparent_enabled = v:true
@@ -117,7 +127,6 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 """"""""""""""""""""""""TELESCOPE"""""""""""""""""""""""""""
-let mapleader = " "
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -165,7 +174,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
  -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+ -- buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
  -- buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
  -- buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
  -- buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -197,14 +206,14 @@ for _, lsp in ipairs(servers) do
   }
 end
 EOF
-
-""""""""""""""""""""""""""""""""""AUTOCOMPLETION""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""AUTOCOMPLETE"""""""""""""""""""""""""""""""""
 set completeopt=menu,menuone,noselect
-lua <<EOF
-  -- Setup nvim-cmp.
-  local cmp = require'cmp'
 
-  cmp.setup({
+lua <<EOF
+    -- Setup nvim-cmp.
+    local cmp = require'cmp'
+
+    cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
@@ -215,36 +224,16 @@ lua <<EOF
       end,
     },
     mapping = {
-    --  ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    --  ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    --  ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    --  ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    --  ['<C-e>'] = cmp.mapping({
-    --    i = cmp.mapping.abort(),
-    --    c = cmp.mapping.close(),
-    --  }),
-    --  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-      end
-    end, { "i", "s" }),
-
-    ["<S-Tab>"] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
-      end
-    end, { "i", "s" }),	
-    }
-	,
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
@@ -255,8 +244,6 @@ lua <<EOF
       { name = 'buffer' },
     })
   })
-
-
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
@@ -274,11 +261,6 @@ lua <<EOF
     })
   })
 
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
-  }
 EOF
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
