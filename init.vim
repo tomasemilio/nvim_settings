@@ -1,8 +1,9 @@
 """""""""""""""""""""""BASIC OPTIONS""""""""""""""""""""""""""""
 filetype off
 set nocompatible
-set hlsearch
+set nohlsearch
 set tabstop=4 softtabstop=4
+set shiftwidth=4
 set foldmethod=manual
 set number
 set rnu
@@ -15,6 +16,8 @@ set termguicolors
 set splitright "Pane splitting, also add splitbelow
 syntax enable
 set clipboard=unnamedplus "Yank to clipboard
+set signcolumn=yes
+set colorcolumn=80
 
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
@@ -35,7 +38,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "Indentation lines
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 
 "Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -46,8 +49,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 "Colorscheme
-" Plug 'gruvbox-community/gruvbox'
-Plug  'overcache/NeoSolarized'
+Plug 'gruvbox-community/gruvbox'
+" Plug  'overcache/NeoSolarized'
 "
 "LSP Config
 Plug 'neovim/nvim-lspconfig'
@@ -66,7 +69,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'xiyaowong/nvim-transparent'
 
 " Comment
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 
 " Copilot
 " Plug 'github/copilot.vim'
@@ -89,6 +92,7 @@ nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
 
+" Split screen into 4.
 nnoremap <C-z> :vs \| :sp \| :wincmd h \| :sp<CR>
 
 augroup Navigation
@@ -98,9 +102,14 @@ augroup END
 
 tnoremap <Esc> <C-\><C-n>
 
+"""""""""""""""""""""""MAPPINGS""""""""""""""""""""""""""""
+
 """""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-" colorscheme gruvbox
-colorscheme NeoSolarized
+colorscheme gruvbox
+" colorscheme NeoSolarized
+
+"""""""""""""""""""""""COMMENT""""""""""""""""""""""""""""
+lua require('Comment').setup()
 
 """""""""""""""""""""""TRANSPARANCY""""""""""""""""""""""""""""
 let g:transparent_enabled = v:true
@@ -121,7 +130,7 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true
+    enable = false
   }
 }
 EOF
@@ -241,7 +250,7 @@ lua <<EOF
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
-      { name = 'buffer' },
+      { name = 'buffer', keyword_length=4},
     })
   })
 
