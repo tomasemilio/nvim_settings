@@ -103,8 +103,9 @@ augroup END
 tnoremap <Esc> <C-\><C-n>
 
 """""""""""""""""""""""MAPPINGS""""""""""""""""""""""""""""
+vnoremap <leader>p "_dP
 
-"""""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
+""""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
 colorscheme gruvbox
 " colorscheme NeoSolarized
 
