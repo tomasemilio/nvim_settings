@@ -51,7 +51,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Colorscheme
 Plug 'gruvbox-community/gruvbox'
 " Plug  'overcache/NeoSolarized'
+" Plug 'jacoborus/tender.vim'
 "
+""
 "LSP Config
 Plug 'neovim/nvim-lspconfig'
 
@@ -73,7 +75,9 @@ Plug 'numToStr/Comment.nvim'
 
 " Copilot
 " Plug 'github/copilot.vim'
-
+"
+" Toggle Terminal
+Plug 'akinsho/toggleterm.nvim'
 
 call plug#end()
 
@@ -106,8 +110,10 @@ tnoremap <Esc> <C-\><C-n>
 vnoremap <leader>p "_dP
 
 """"""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
+" colorscheme tender
 colorscheme gruvbox
-" colorscheme NeoSolarized
+"" colorscheme NeoSolarized
+let g:gruvbox_contrast_dark='hard'
 
 """""""""""""""""""""""COMMENT""""""""""""""""""""""""""""
 lua require('Comment').setup()
@@ -116,7 +122,7 @@ lua require('Comment').setup()
 let g:transparent_enabled = v:true
 
 """""""""""""""""""""""TREESITTER ENABLE ALL""""""""""""""""""""""""""""
-lua <<EOF
+lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
@@ -183,12 +189,12 @@ local on_attach = function(client, bufnr)
  -- buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
- -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
  -- buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
  -- buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
  -- buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
  -- buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
- -- buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -219,7 +225,7 @@ EOF
 """"""""""""""""""""""""AUTOCOMPLETE"""""""""""""""""""""""""""""""""
 set completeopt=menu,menuone,noselect
 
-lua <<EOF
+lua << EOF
     -- Setup nvim-cmp.
     local cmp = require'cmp'
 
@@ -272,5 +278,19 @@ lua <<EOF
   })
 
 EOF
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""ToggleTerm"""""""""""""""""""""""""""
+lua << EOF
+require("toggleterm").setup{
+	direction = "float",
+	open_mapping = [[<c-\>]],
+	-- on_open = fun(t: Terminal), -- function to run when the terminal opens
+	-- on_close = fun(t: Terminal), -- function to run when the terminal closes
+	-- hide_numbers = true, -- hide the number column in toggleterm buffers
+	-- shade_filetypes = {},
+	-- shade_terminals = true,
+	-- shading_factor = 3,
+}
+EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
