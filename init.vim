@@ -144,8 +144,10 @@ EOF
 
 """"""""""""""""""""""""TELESCOPE"""""""""""""""""""""""""""
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fF <cmd>Telescope find_files no_ignore=true search_dirs=~/Documents<cr>
+nnoremap <leader>ff <cmd>Telescope find_files no_ignore=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fG <cmd>Telescope live_grep max_results=50 search_dirs=~/Documents<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
