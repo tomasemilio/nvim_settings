@@ -18,6 +18,7 @@ syntax enable
 set clipboard=unnamedplus "Yank to clipboard
 set signcolumn=yes
 set colorcolumn=80
+set laststatus=3
 
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
@@ -142,8 +143,9 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-""""""""""""""""""""""""TELESCOPE""""""""""""""""""""""""""" " Find files using Telescope command-line sugar. nnoremap <leader>fF <cmd>Telescope find_files no_ignore=true search_dirs=~/Documents<cr>
+""""""""""""""""""""""""TELESCOPE"""""""""""""""""""""""""""
 nnoremap <leader>ff <cmd>Telescope find_files no_ignore=true<cr>
+nnoremap <leader>fF <cmd>Telescope find_files search_dirs=~/Documents<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fr <cmd>Telescope file_browser<cr>
 nnoremap <leader>fG <cmd>Telescope live_grep max_results=50 search_dirs=~/Documents<cr>
