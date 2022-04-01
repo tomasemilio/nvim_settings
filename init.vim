@@ -20,6 +20,8 @@ set signcolumn=yes
 set colorcolumn=80
 set laststatus=3
 
+let g:python_recommended_style=0 "Use PEP8 style
+
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -51,9 +53,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 "Colorscheme
 Plug 'gruvbox-community/gruvbox'
-" Plug  'overcache/NeoSolarized'
-" Plug 'jacoborus/tender.vim'
-"
+
 ""
 "LSP Config
 Plug 'neovim/nvim-lspconfig'
@@ -75,7 +75,7 @@ Plug 'xiyaowong/nvim-transparent'
 Plug 'numToStr/Comment.nvim'
 
 " Copilot
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 "
 " Toggle Terminal
 Plug 'akinsho/toggleterm.nvim'
@@ -213,8 +213,6 @@ end
 -- map buffer local keybindings when the language server attaches
 local servers = {
     'pyright',
-	--'rust_analyzer',
-	--'tsserver'
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -295,5 +293,8 @@ require("toggleterm").setup{
 }
 EOF
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""COPILOT"""""""""""""""""""""""""""""
+" imap <silent><script><expr> <C-n> copilot#Accept("\<CR>")
+" let g:copilot_no_tab_map = v:true
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
