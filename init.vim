@@ -22,6 +22,8 @@ set laststatus=3
 
 let g:python_recommended_style=0 "Use PEP8 style
 
+highlight WinSeparator guibg=None
+
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -82,6 +84,10 @@ Plug 'akinsho/toggleterm.nvim'
 
 call plug#end()
 
+""""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
+colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
+
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
 let mapleader = " "
 
@@ -98,11 +104,13 @@ nnoremap <M-l> :vertical resize +2<CR>
 
 
 " Split screen into 4.
-nnoremap <C-z> :vs \| :sp \| :wincmd h \| :sp<CR>
+" nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
+nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
 
 augroup Navigation
-	"autocmd VimEnter * vs
-	"autocmd VimEnter * wincmd j
+	autocmd VimEnter * vs
+	autocmd VimEnter * vs
+	autocmd VimEnter * wincmd h
 augroup END
 
 tnoremap <Esc> <C-\><C-n>
@@ -110,11 +118,6 @@ tnoremap <Esc> <C-\><C-n>
 """""""""""""""""""""""MAPPINGS""""""""""""""""""""""""""""
 vnoremap <leader>p "_dP
 
-""""""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-" colorscheme tender
-colorscheme gruvbox
-"" colorscheme NeoSolarized
-let g:gruvbox_contrast_dark='hard'
 
 """""""""""""""""""""""COMMENT""""""""""""""""""""""""""""
 lua require('Comment').setup()
@@ -293,8 +296,8 @@ require("toggleterm").setup{
 }
 EOF
 
-"""""""""""""""""""""""""""""""""""COPILOT"""""""""""""""""""""""""""""
-" imap <silent><script><expr> <C-n> copilot#Accept("\<CR>")
-" let g:copilot_no_tab_map = v:true
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""MANUAL FIXES AT THE END """"""""""""
+augroup Navigation
+	autocmd VimEnter * source ~/.config/nvim/init.vim
+	autocmd VimEnter * highlight WinSeparator guibg=None
+augroup END
