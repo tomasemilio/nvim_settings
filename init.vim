@@ -22,7 +22,6 @@ set laststatus=3
 
 let g:python_recommended_style=0 "Use PEP8 style
 
-highlight WinSeparator guibg=None
 
 """""""""""""""""""""""VIM PLUG""""""""""""""""""""""""""""
 " Install vim-plug if not found
@@ -118,6 +117,7 @@ tnoremap <Esc> <C-\><C-n>
 """""""""""""""""""""""MAPPINGS""""""""""""""""""""""""""""
 vnoremap <leader>p "_dP
 
+nnoremap :W :wa \| :qa<CR>
 
 """""""""""""""""""""""COMMENT""""""""""""""""""""""""""""
 lua require('Comment').setup()
@@ -128,7 +128,7 @@ let g:transparent_enabled = v:true
 """""""""""""""""""""""TREESITTER ENABLE ALL""""""""""""""""""""""""""""
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { 'ruby' }, -- List of parsers to ignore installing
   highlight = {
