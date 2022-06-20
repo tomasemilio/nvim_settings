@@ -117,7 +117,7 @@ tnoremap <Esc> <C-\><C-n>
 """""""""""""""""""""""MAPPINGS""""""""""""""""""""""""""""
 vnoremap <leader>p "_dP
 
-nnoremap :W :wa \| :qa<CR>
+" nnoremap :W :wa \| :qa<CR>
 
 """""""""""""""""""""""COMMENT""""""""""""""""""""""""""""
 lua require('Comment').setup()
@@ -287,9 +287,11 @@ lua << EOF
 require("toggleterm").setup{
 	direction = "float",
 	open_mapping = [[<c-\>]],
-	-- on_open = fun(t: Terminal), -- function to run when the terminal opens
+	on_open = function(normal) -- function to run when the terminal opens
+		vim.cmd(":wa")
+	end,
 	-- on_close = fun(t: Terminal), -- function to run when the terminal closes
-	-- hide_numbers = true, -- hide the number column in toggleterm buffers
+	hide_numbers = false, -- hide the number column in toggleterm buffers
 	-- shade_filetypes = {},
 	-- shade_terminals = true,
 	-- shading_factor = 3,
