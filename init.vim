@@ -117,8 +117,6 @@ tnoremap <Esc> <C-\><C-n>
 """""""""""""""""""""""MAPPINGS""""""""""""""""""""""""""""
 vnoremap <leader>p "_dP
 
-" nnoremap :W :wa \| :qa<CR>
-
 """""""""""""""""""""""COMMENT""""""""""""""""""""""""""""
 lua require('Comment').setup()
 
