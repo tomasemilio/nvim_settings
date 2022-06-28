@@ -106,11 +106,11 @@ nnoremap <M-l> :vertical resize +2<CR>
 " nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
 nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
 
-augroup Navigation
-	autocmd VimEnter * vs
-	autocmd VimEnter * vs
-	autocmd VimEnter * wincmd h
-augroup END
+" augroup Navigation
+" 	autocmd VimEnter * vs
+" 	autocmd VimEnter * vs
+" 	autocmd VimEnter * wincmd h
+" augroup END
 
 tnoremap <Esc> <C-\><C-n>
 
@@ -126,7 +126,17 @@ let g:transparent_enabled = v:true
 """""""""""""""""""""""TREESITTER ENABLE ALL""""""""""""""""""""""""""""
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {
+	  "python",
+	  "html",
+	  "javascript",
+	  "lua",
+	  "markdown",
+	  "typescript",
+	  "json",
+	  "yaml"
+
+  }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { 'ruby' }, -- List of parsers to ignore installing
   highlight = {
