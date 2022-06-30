@@ -16,3 +16,24 @@ require('telescope').setup {
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
 
+local mappings = {}
+
+mappings.find_files = function()
+	require('telescope.builtin').find_files({
+		no_ignore = true,
+	})
+end
+
+mappings.live_grep = function()
+	require('telescope.builtin').live_grep()
+end
+
+mappings.buffers = function()
+	require('telescope.builtin').buffers()
+end
+
+mappings.current_buffer_fuzzy_find = function()
+	require('telescope.builtin').current_buffer_fuzzy_find()
+end
+
+return mappings

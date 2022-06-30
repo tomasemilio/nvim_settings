@@ -80,6 +80,9 @@ Plug 'github/copilot.vim'
 " Toggle Terminal
 Plug 'akinsho/toggleterm.nvim'
 
+" Icons
+Plug 'kyazdani42/nvim-web-devicons'
+
 call plug#end()
 
 """"""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
@@ -129,13 +132,10 @@ let g:transparent_enabled = v:true
 lua require('treesitter_custom')
 
 """"""""""""""""""""""""TELESCOPE"""""""""""""""""""""""""""
-nnoremap <leader>ff <cmd>Telescope find_files no_ignore=true<cr>
-nnoremap <leader>fF <cmd>Telescope find_files search_dirs=~/Documents<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fG <cmd>Telescope live_grep max_results=50 search_dirs=~/Documents<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>cfb <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>ff <cmd>lua require('telescope_custom').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope_custom').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope_custom').buffers()<cr>
+nnoremap <leader>cfb <cmd>lua require('telescope_custom').current_buffer_fuzzy_find()<cr>
 
 lua require('telescope_custom')
 "
