@@ -135,6 +135,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fG <cmd>Telescope live_grep max_results=50 search_dirs=~/Documents<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>cfb <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 lua require('telescope_custom')
 "
