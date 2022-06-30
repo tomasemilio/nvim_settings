@@ -132,7 +132,10 @@ let g:transparent_enabled = v:true
 lua require('treesitter_custom')
 
 """"""""""""""""""""""""TELESCOPE"""""""""""""""""""""""""""
+nnoremap <leader><F4> <cmd>source ~/.config/nvim/init.vim<CR>
+
 nnoremap <leader>ff <cmd>lua require('telescope_custom').find_files()<cr>
+nnoremap <leader>fF <cmd>lua require('telescope_custom').find_files_all()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope_custom').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope_custom').buffers()<cr>
 nnoremap <leader>cfb <cmd>lua require('telescope_custom').current_buffer_fuzzy_find()<cr>

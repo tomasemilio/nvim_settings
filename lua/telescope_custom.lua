@@ -21,6 +21,15 @@ local mappings = {}
 mappings.find_files = function()
 	require('telescope.builtin').find_files({
 		no_ignore = true,
+		hidden = false,
+		file_ignore_patterns = {'env/', '__pycache__/'}
+	})
+end
+
+mappings.find_files_all = function()
+	require('telescope.builtin').find_files({
+		no_ignore = false,
+		hidden = true,
 	})
 end
 
