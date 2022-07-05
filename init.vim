@@ -111,11 +111,11 @@ nnoremap <M-l> :vertical resize +2<CR>
 " nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
 nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
 
-" augroup Navigation
-" 	autocmd VimEnter * vs
-" 	autocmd VimEnter * vs
-" 	autocmd VimEnter * wincmd h
-" augroup END
+augroup Navigation
+	autocmd VimEnter * vs
+	autocmd VimEnter * vs
+	autocmd VimEnter * wincmd h
+augroup END
 
 tnoremap <Esc> <C-\><C-n>
 
@@ -139,6 +139,7 @@ nnoremap <leader>fF <cmd>lua require('telescope_custom').find_files_all()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope_custom').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope_custom').buffers()<cr>
 nnoremap <leader>cfb <cmd>lua require('telescope_custom').current_buffer_fuzzy_find()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope_custom').git_status()<cr>
 
 lua require('telescope_custom')
 "
