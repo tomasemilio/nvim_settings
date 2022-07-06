@@ -139,7 +139,7 @@ nnoremap <leader>fF <cmd>lua require('telescope_custom').find_files_all()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope_custom').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope_custom').buffers()<cr>
 nnoremap <leader>cfb <cmd>lua require('telescope_custom').current_buffer_fuzzy_find()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope_custom').git_status()<cr>
+nnoremap <leader>gt <cmd>lua require('telescope_custom').git_status()<cr>
 
 lua require('telescope_custom')
 "
