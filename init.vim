@@ -142,6 +142,7 @@ nnoremap <leader>cfb <cmd>lua require('telescope_custom').current_buffer_fuzzy_f
 nnoremap <leader>gt <cmd>lua require('telescope_custom').git_status()<cr>
 nnoremap <leader>dg <cmd>lua require('telescope_custom').diagnostics()<cr>
 nnoremap <leader>gr <cmd>lua require('telescope_custom').lsp_references()<cr>
+nnoremap <leader>hp <cmd>lua require('telescope_custom').help_tags()<cr>
 
 lua require('telescope_custom')
 "
@@ -160,3 +161,9 @@ augroup Navigation
 	" autocmd VimEnter * source ~/.config/nvim/init.vim
 	autocmd VimEnter * highlight WinSeparator guibg=None
 augroup END
+
+" Custom functions
+lua require('custom_function')
+
+vmap <leader>F <cmd>lua require('custom_function').test()<CR>
+

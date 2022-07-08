@@ -57,6 +57,9 @@ mappings.lsp_references = function()
 	require('telescope.builtin').lsp_references()
 end
 
+mappings.help_tags = function()
+	require('telescope.builtin').help_tags()
+end
 
 
 return mappings
