@@ -49,5 +49,14 @@ mappings.git_status = function()
 	require('telescope.builtin').git_status()
 end
 
+mappings.diagnostics = function()
+	require('telescope.builtin').diagnostics()
+end
+
+mappings.lsp_references = function()
+	require('telescope.builtin').lsp_references()
+end
+
+
 
 return mappings

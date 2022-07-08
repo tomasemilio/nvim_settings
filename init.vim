@@ -89,7 +89,7 @@ call plug#end()
 colorscheme gruvbox
 
 let g:gruvbox_bold = 0
-let g:gruvbox_italic = 1 
+let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'hard'
 
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
@@ -140,6 +140,8 @@ nnoremap <leader>fg <cmd>lua require('telescope_custom').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope_custom').buffers()<cr>
 nnoremap <leader>cfb <cmd>lua require('telescope_custom').current_buffer_fuzzy_find()<cr>
 nnoremap <leader>gt <cmd>lua require('telescope_custom').git_status()<cr>
+nnoremap <leader>dg <cmd>lua require('telescope_custom').diagnostics()<cr>
+nnoremap <leader>gr <cmd>lua require('telescope_custom').lsp_references()<cr>
 
 lua require('telescope_custom')
 "
@@ -153,8 +155,8 @@ lua require('autocomplete_custom')
 """""""""""""""""""""""""""ToggleTerm"""""""""""""""""""""""""""
 lua require('toggleterm_custom')
 
-""""""""""""MANUAL FIXES AT THE END """"""""""""
+" """"""""""""MANUAL FIXES AT THE END """"""""""""
 augroup Navigation
-	autocmd VimEnter * source ~/.config/nvim/init.vim
+	" autocmd VimEnter * source ~/.config/nvim/init.vim
 	autocmd VimEnter * highlight WinSeparator guibg=None
 augroup END
