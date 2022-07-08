@@ -1,8 +1,6 @@
 local custom_functions = {}
 
-custom_functions.test= function(a)
-	print('HOLA')
-	return 1
+custom_functions.test= function(val)
 end
 
 return custom_functions

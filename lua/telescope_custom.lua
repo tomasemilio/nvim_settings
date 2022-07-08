@@ -28,7 +28,7 @@ end
 
 mappings.find_files_all = function()
 	require('telescope.builtin').find_files({
-		no_ignore = false,
+		no_ignore = true,
 		hidden = true,
 	})
 end
