@@ -53,8 +53,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 "Colorscheme
-" Plug 'morhetz/gruvbox'
-Plug 'olimorris/onedarkpro.nvim'
+Plug 'morhetz/gruvbox'
 
 "LSP Config
 Plug 'neovim/nvim-lspconfig'
@@ -70,7 +69,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'jiangmiao/auto-pairs'
 
 "Transparent background
-" Plug 'xiyaowong/nvim-transparent'
+Plug 'xiyaowong/nvim-transparent'
 
 " Comment
 Plug 'numToStr/Comment.nvim'
@@ -87,15 +86,10 @@ Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 """"""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-colorscheme onedarkpro
-
-lua require('onedarkpro_custom')
-
-" colorscheme gruvbox
-"
-" let g:gruvbox_bold = 0
-" let g:gruvbox_italic = 1
-" let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark = 'medium'
 
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
 let mapleader = " "
@@ -169,5 +163,5 @@ vmap <leader>F <cmd>lua require('custom_function').test()<CR>
 """"""""""""MANUAL FIXES AT THE END """"""""""
 augroup Navigation
 	autocmd VimEnter * source ~/.config/nvim/init.vim
-	" autocmd VimEnter * highlight WinSeparator guibg=None
+	autocmd VimEnter * highlight WinSeparator guibg=None
 augroup END
