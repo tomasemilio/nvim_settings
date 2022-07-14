@@ -142,6 +142,7 @@ nnoremap <leader>gt <cmd>lua require('telescope_custom').git_status()<cr>
 nnoremap <leader>dg <cmd>lua require('telescope_custom').diagnostics()<cr>
 nnoremap <leader>gr <cmd>lua require('telescope_custom').lsp_references()<cr>
 nnoremap <leader>hp <cmd>lua require('telescope_custom').help_tags()<cr>
+nnoremap <leader>k <cmd>lua require('telescope_custom').keymaps()<cr>
 
 lua require('telescope_custom')
 "

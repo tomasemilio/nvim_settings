@@ -61,5 +61,9 @@ mappings.help_tags = function()
 	require('telescope.builtin').help_tags()
 end
 
+mappings.keymaps = function()
+	require('telescope.builtin').keymaps()
+end
+
 
 return mappings
