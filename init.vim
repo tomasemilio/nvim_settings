@@ -138,11 +138,12 @@ nnoremap <leader>fF <cmd>lua require('telescope_custom').find_files_all()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope_custom').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope_custom').buffers()<cr>
 nnoremap <leader>cfb <cmd>lua require('telescope_custom').current_buffer_fuzzy_find()<cr>
-nnoremap <leader>gt <cmd>lua require('telescope_custom').git_status()<cr>
+nnoremap <leader>gs <cmd>lua require('telescope_custom').git_status()<cr>
+nnoremap <leader>gb <cmd>lua require('telescope_custom').git_branches()<cr>
 nnoremap <leader>dg <cmd>lua require('telescope_custom').diagnostics()<cr>
-nnoremap <leader>gr <cmd>lua require('telescope_custom').lsp_references()<cr>
+nnoremap <leader>rf <cmd>lua require('telescope_custom').lsp_references()<cr>
 nnoremap <leader>hp <cmd>lua require('telescope_custom').help_tags()<cr>
-nnoremap <leader>k <cmd>lua require('telescope_custom').keymaps()<cr>
+nnoremap <leader>km <cmd>lua require('telescope_custom').keymaps()<cr>
 
 lua require('telescope_custom')
 "

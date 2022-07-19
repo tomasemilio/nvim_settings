@@ -49,6 +49,10 @@ mappings.git_status = function()
 	require('telescope.builtin').git_status()
 end
 
+mappings.git_branches = function()
+	require('telescope.builtin').git_branches()
+end
+
 mappings.diagnostics = function()
 	require('telescope.builtin').diagnostics()
 end
