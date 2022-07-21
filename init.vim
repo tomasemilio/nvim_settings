@@ -4,7 +4,7 @@ set nocompatible
 set nohlsearch
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set foldmethod=indent
+set foldmethod=indent foldlevelstart=2 foldnestmax=2
 set number
 set rnu
 set nowrap
@@ -158,9 +158,8 @@ lua require('autocomplete_custom')
 lua require('toggleterm_custom')
 
 " Custom functions
-lua require('custom_function')
-
-vmap <leader>F <cmd>lua require('custom_function').test()<CR>
+" lua require('custom_function')
+" vmap <leader>F <cmd>lua require('custom_function').test()<CR>
 
 """"""""""""MANUAL FIXES AT THE END """"""""""
 augroup Navigation
