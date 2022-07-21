@@ -108,13 +108,13 @@ nnoremap <M-l> :vertical resize +2<CR>
 
 " Split screen into 4.
 " nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
-nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
+" nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
 
-augroup Navigation
-	autocmd VimEnter * vs
-	autocmd VimEnter * vs
-	autocmd VimEnter * wincmd h
-augroup END
+" augroup Navigation
+" 	autocmd VimEnter * vs
+" 	autocmd VimEnter * vs
+" 	autocmd VimEnter * wincmd h
+" augroup END
 
 tnoremap <Esc> <C-\><C-n>
 
