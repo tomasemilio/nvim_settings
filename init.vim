@@ -89,7 +89,6 @@ call plug#end()
 """"""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
 colorscheme material
 let g:material_style = "oceanic"
-lua require('material_custom')
 
 " colorscheme gruvbox
 " let g:gruvbox_bold = 0
