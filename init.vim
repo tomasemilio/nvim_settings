@@ -1,4 +1,4 @@
-"""""""""""""""""""""""BASIC OPTIONS""""""""""""""""""""""""""""
+"cker""""""""""""""""""""""BASIC OPTIONS""""""""""""""""""""""""""""
 filetype off
 syntax enable
 set colorcolumn=80
