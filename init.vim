@@ -42,7 +42,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "Indentation lines
-" Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 "Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -53,7 +53,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 "Colorscheme
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'marko-cerovac/material.nvim'
 
 "LSP Config
 Plug 'neovim/nvim-lspconfig'
@@ -86,10 +87,14 @@ Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 """"""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-colorscheme gruvbox
-let g:gruvbox_bold = 0
-let g:gruvbox_italic = 1
-let g:gruvbox_contrast_dark = 'medium'
+colorscheme material
+let g:material_style = "oceanic"
+lua require('material_custom')
+
+" colorscheme gruvbox
+" let g:gruvbox_bold = 0
+" let g:gruvbox_italic = 1
+" let g:gruvbox_contrast_dark = 'medium'
 
 """""""""""""""""""""""PANES NAVIGATION""""""""""""""""""""""""""""
 let mapleader = " "
@@ -125,7 +130,7 @@ vnoremap <leader>p "_dP
 lua require('Comment').setup()
 
 """""""""""""""""""""""TRANSPARANCY""""""""""""""""""""""""""""
-let g:transparent_enabled = v:true
+" let g:transparent_enabled = v:true
 
 """""""""""""""""""""""TREESITTER ENABLE ALL""""""""""""""""""""""""""""
 lua require('treesitter_custom')
