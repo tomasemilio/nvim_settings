@@ -41,6 +41,10 @@ km('n', '<leader>hp', '<cmd>lua require("telescope_custom").help_tags()<cr>', {n
 km('n', '<leader>km', '<cmd>lua require("telescope_custom").keymaps()<cr>', {noremap = true})
 
 
+-- Split Screen into 4
+km('n', '<C-z>', ':vs \\| :vs \\| :wincmd h \\| :vs<CR>', {noremap = true})
+
+
 
 -- Split screen into 4.
 -- nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
