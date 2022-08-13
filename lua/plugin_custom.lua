@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	use({"vim-airline/vim-airline-themes"})
 
 	-- Indent
-	use({'lukas-reineke/indent-blankline.nvim'})
+	-- use({'lukas-reineke/indent-blankline.nvim'})
 
 	-- Telescope
 	use {
@@ -62,7 +62,7 @@ return packer.startup(function(use)
 	use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
 
 	-- Colorscheme
-	use({'marko-cerovac/material.nvim'})
+	use 'folke/tokyonight.nvim'
 
 	-- Language support
 	use({'neovim/nvim-lspconfig'})

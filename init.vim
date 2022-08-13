@@ -9,17 +9,13 @@ lua require('options_custom')
 lua require('plugin_custom')
 
 """"""""""""""""""""""COLORSCHEME""""""""""""""""""""""""""""
-colorscheme material
-let g:material_style = "darker"
+lua require('colorscheme_custom')
 
 """""""""""""""""""""""KEYMAPS""""""""""""""""""""""""""""
 lua require('keymaps_custom')
 
 """""""""""""""""""""""COMMENT""""""""""""""""""""""""""""
 lua require('Comment').setup()
-
-"""""""""""""""""""""""TRANSPARANCY""""""""""""""""""""""""""""
-" let g:transparent_enabled = v:true
 
 """""""""""""""""""""""TREESITTER ENABLE ALL""""""""""""""""""""""""""""
 lua require('treesitter_custom')
@@ -28,6 +24,9 @@ lua require('treesitter_custom')
 lua require('telescope_custom')
 "
 """""""""""""""""""""""""LSP CONFIG""""""""""""""""""""""""""
+lua require('lsp_custom')
+"
+"""""""""""""""""""""""""Transparency""""""""""""""""""""""""""
 lua require('lsp_custom')
 "
 """"""""""""""""""""""""AUTOCOMPLETE"""""""""""""""""""""""""""""""""

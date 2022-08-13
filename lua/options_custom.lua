@@ -19,6 +19,7 @@ local options = {
   clipboard = "unnamedplus", --Yank to clipboard,
   signcolumn = "yes",
   laststatus = 3,
+  pumblend=100,
 }
 
 for k, v in pairs(options) do
