@@ -80,7 +80,7 @@ return packer.startup(function(use)
 	use({"jiangmiao/auto-pairs"})
 
 	-- Transparent
-	use({"xiyaowong/nvim-transparent"})
+	-- use({"xiyaowong/nvim-transparent"})
 
 	-- Comment
 	use({"numToStr/Comment.nvim"})
