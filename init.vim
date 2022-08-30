@@ -30,11 +30,14 @@ lua require('lsp_custom')
 lua require('lsp_custom')
 "
 """"""""""""""""""""""""AUTOCOMPLETE"""""""""""""""""""""""""""""""""
-set completeopt=menu,menuone,noselect
-lua require('autocomplete_custom')
+" set completeopt=menu,menuone,noselect
+" lua require('autocomplete_custom')
 "
 """""""""""""""""""""""""""ToggleTerm"""""""""""""""""""""""""""
 lua require('toggleterm_custom')
+
+"""""""""""""""""""""""""""LuaSnippet"""""""""""""""""""""""""""
+lua require('luasnippet_custom')
 
 """"""""""""MANUAL FIXES AT THE END """"""""""
 augroup Navigation

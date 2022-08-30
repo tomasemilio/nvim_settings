@@ -87,6 +87,9 @@ return packer.startup(function(use)
 
 	--Copilot
 	use({"github/copilot.vim"})
+
+	-- Snippets
+	use({"L3MON4D3/LuaSnip"})
 	
 	-- Icons
 	use({"kyazdani42/nvim-web-devicons"})
