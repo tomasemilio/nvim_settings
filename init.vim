@@ -31,7 +31,7 @@ lua require('lsp_custom')
 "
 """"""""""""""""""""""""AUTOCOMPLETE"""""""""""""""""""""""""""""""""
 " set completeopt=menu,menuone,noselect
-" lua require('autocomplete_custom')
+lua require('autocomplete_custom')
 "
 """""""""""""""""""""""""""ToggleTerm"""""""""""""""""""""""""""
 lua require('toggleterm_custom')
