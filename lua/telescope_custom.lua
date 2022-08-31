@@ -38,6 +38,12 @@ mappings.live_grep = function()
 	require('telescope.builtin').live_grep()
 end
 
+mappings.live_grep_ignore = function()
+	require('telescope.builtin').live_grep({
+	ignore_patterns = {'env/', '__pycache__/'}
+	})
+end
+
 mappings.buffers = function()
 	require('telescope.builtin').buffers()
 end
