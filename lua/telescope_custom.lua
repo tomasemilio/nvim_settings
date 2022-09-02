@@ -1,6 +1,9 @@
 -- You dont need to set any of these options. These are the default ones. Only
 -- the loading is important
 require('telescope').setup {
+	defaults = {
+		layout_strategy = 'vertical',
+	},
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
@@ -11,6 +14,7 @@ require('telescope').setup {
     }
   },
   file_ignore_patterns = {'env/', '__pycache__/'},
+  layout_strategy = 'vertical',
 
 }
 -- To get fzf loaded and working with telescope, you need to call
