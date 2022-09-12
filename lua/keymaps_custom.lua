@@ -35,6 +35,7 @@ km('n', '<leader>fG', '<cmd>lua require("telescope_custom").live_grep_ignore()<c
 km('n', '<leader>fb', '<cmd>lua require("telescope_custom").buffers()<cr>', {noremap = true})
 km('n', '<leader>cfb', '<cmd>lua require("telescope_custom").current_buffer_fuzzy_find()<cr>', {noremap = true})
 km('n', '<leader>gs', '<cmd>lua require("telescope_custom").git_status()<cr>', {noremap = true})
+km('n', '<leader>gc', '<cmd>lua require("telescope_custom").git_bcommits()<cr>', {noremap = true})
 km('n', '<leader>gb', '<cmd>lua require("telescope_custom").git_branches()<cr>', {noremap = true})
 km('n', '<leader>dg', '<cmd>lua require("telescope_custom").diagnostics()<cr>', {noremap = true})
 km('n', '<leader>rf', '<cmd>lua require("telescope_custom").lsp_references()<cr>', {noremap = true})

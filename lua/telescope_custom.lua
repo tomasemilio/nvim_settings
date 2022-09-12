@@ -64,6 +64,10 @@ mappings.git_branches = function()
 	require('telescope.builtin').git_branches()
 end
 
+mappings.git_bcommits = function()
+	require('telescope.builtin').git_bcommits()
+end
+
 mappings.diagnostics = function()
 	require('telescope.builtin').diagnostics()
 end
