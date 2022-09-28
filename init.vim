@@ -43,4 +43,7 @@ lua require('luasnippet_custom')
 augroup Navigation
 	autocmd VimEnter * source ~/.config/nvim/init.vim
 	" autocmd VimEnter * highlight WinSeparator guibg=None
+	autocmd VimEnter * vs
+	autocmd VimEnter * vs
+	autocmd VimEnter * wincmd h
 augroup END
