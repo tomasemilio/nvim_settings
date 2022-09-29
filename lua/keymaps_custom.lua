@@ -41,6 +41,7 @@ km('n', '<leader>dg', '<cmd>lua require("telescope_custom").diagnostics()<cr>', 
 km('n', '<leader>rf', '<cmd>lua require("telescope_custom").lsp_references()<cr>', {noremap = true})
 km('n', '<leader>hp', '<cmd>lua require("telescope_custom").help_tags()<cr>', {noremap = true})
 km('n', '<leader>km', '<cmd>lua require("telescope_custom").keymaps()<cr>', {noremap = true})
+km('n', '<leader>e', '<cmd>Telescope file_browser<cr>', {noremap = true})
 
 -- LSP
  -- km('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap=true, silent=true})
