@@ -20,6 +20,7 @@ local options = {
   signcolumn = "yes",
   laststatus = 3,
   pumblend=100,
+  winbar="%f"
 }
 
 for k, v in pairs(options) do
