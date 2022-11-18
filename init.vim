@@ -40,10 +40,10 @@ lua require('toggleterm_custom')
 lua require('luasnippet_custom')
 
 """"""""""""MANUAL FIXES AT THE END """"""""""
-augroup Navigation
-	autocmd VimEnter * source ~/.config/nvim/init.vim
-	" autocmd VimEnter * highlight WinSeparator guibg=None
-	autocmd VimEnter * vs
-	autocmd VimEnter * vs
-	autocmd VimEnter * wincmd h
-augroup END
+" augroup Navigation
+" 	" autocmd VimEnter * source ~/.config/nvim/init.vim
+" 	" autocmd VimEnter * highlight WinSeparator guibg=None
+" 	" autocmd VimEnter * vs
+" 	" autocmd VimEnter * vs
+" 	" autocmd VimEnter * wincmd h
+" augroup END
