@@ -64,14 +64,20 @@ km('n', '<leader>e', '<cmd>Telescope file_browser<cr>', {noremap = true})
 
 
 -- Split Screen into 4
-km('n', '<C-z>', ':vs \\| :vs \\| :wincmd h \\| :vs<CR>', {noremap = true})
+-- km('n', '<C-z>', ':vs \\| :vs \\| :wincmd h \\| :vs<CR>', {noremap = true})
 km(
 	'n',
 	'<leader><F6>', 
-	':vs | :vs | :vs | :sp | :wincmd h | :sp | :wincmd h | :sp | :wincmd h | :sp<CR>',
+	':only | :vs | :vs | :vs | :sp | :wincmd h | :sp | :wincmd h | :sp | :wincmd h | :sp<CR>',
 	{noremap = true}
 )
 
+km(
+	'n',
+	'<leader><F5>', 
+	':only | :vs | :vs | :vs<CR>',
+	{noremap = true}
+)
 
 
 -- Split screen into 4.
