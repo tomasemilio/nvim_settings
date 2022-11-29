@@ -63,8 +63,7 @@ km('n', '<leader>e', '<cmd>Telescope file_browser<cr>', {noremap = true})
  -- km('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap=true, silent=true})
 
 
--- Split Screen into 4
--- km('n', '<C-z>', ':vs \\| :vs \\| :wincmd h \\| :vs<CR>', {noremap = true})
+-- Split Screen
 km(
 	'n',
 	'<leader><F6>', 
@@ -79,10 +78,13 @@ km(
 	{noremap = true}
 )
 
+km(
+	'n',
+	'<leader><F2>', 
+	':only | :vs | :wincmd h | :vertical resize 80 | :wincmd l<CR>',
+	{noremap = true}
+)
 
--- Split screen into 4.
--- nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
--- nnoremap <C-z> :vs \| :vs \| :wincmd h \| :vs<CR>
 --
 -- augroup Navigation
 -- 	autocmd VimEnter * vs
