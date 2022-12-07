@@ -22,6 +22,10 @@ km('n', '<M-k>', ':resize +2<CR>', {noremap = true})
 km('n', '<M-h>', ':vertical resize -2<CR>', {noremap = true})
 km('n', '<M-l>', ':vertical resize +2<CR>', {noremap = true})
 
+-- Center going up and down
+km('n', '<C-u>', '<C-u>zz', {noremap = true})
+km('n', '<C-d>', '<C-d>zz', {noremap = true})
+
 
 km('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
 
