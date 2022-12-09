@@ -39,6 +39,11 @@ lua require('toggleterm_custom')
 """""""""""""""""""""""""""LuaSnippet"""""""""""""""""""""""""""
 lua require('luasnippet_custom')
 
+"""""""""""""""""""""""""""Lualine"""""""""""""""""""""""""""
+lua require('lualine_custom')
+
+
+
 """"""""""""MANUAL FIXES AT THE END """"""""""
 " augroup Navigation
 " 	" autocmd VimEnter * source ~/.config/nvim/init.vim

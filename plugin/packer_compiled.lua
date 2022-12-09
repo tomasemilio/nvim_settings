@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/tomasemilio/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/tomasemilio/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/tomasemilio/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -168,16 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tomasemilio/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/Users/tomasemilio/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "/Users/tomasemilio/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
   }
 }
 

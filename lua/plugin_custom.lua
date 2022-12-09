@@ -43,10 +43,6 @@ return packer.startup(function(use)
 	-- My plugins here
 	use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
 	
-	--Status bar
-	use({"vim-airline/vim-airline"})
-	use({"vim-airline/vim-airline-themes"})
-
 	-- Indent
 	-- use({'lukas-reineke/indent-blankline.nvim'})
 
@@ -58,6 +54,12 @@ return packer.startup(function(use)
 	}
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use { "nvim-telescope/telescope-file-browser.nvim" }
+
+	-- Lualine
+	use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 
 	-- Treesitter
 	use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
