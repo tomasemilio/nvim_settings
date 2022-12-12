@@ -1,10 +1,3 @@
-"cker""""""""""""""""""""""BASIC OPTIONS""""""""""""""""""""""""""""
-filetype off
-syntax enable
-set colorcolumn=80
-let g:python_recommended_style=0 "Use PEP8 style
-lua require('options_custom')
-
 "Packer
 lua require('plugin_custom')
 
@@ -42,7 +35,12 @@ lua require('luasnippet_custom')
 """""""""""""""""""""""""""Lualine"""""""""""""""""""""""""""
 lua require('lualine_custom')
 
-
+""""""""""""""""""""""BASIC OPTIONS""""""""""""""""""""""""""""
+lua require('options_custom')
+filetype off
+syntax enable
+set colorcolumn=80
+let g:python_recommended_style=0 "Use PEP8 style
 
 """"""""""""MANUAL FIXES AT THE END """"""""""
 " augroup Navigation
