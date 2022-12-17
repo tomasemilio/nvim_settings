@@ -20,7 +20,11 @@ local options = {
   signcolumn = "yes",
   laststatus = 3,
   pumblend=100,
-  winbar="%f"
+  winbar="%f",
+  completeopt = "menuone,noselect,menuone",
+  filetype = "off",
+  syntax = "on",
+  colorcolumn = "80",
 }
 
 for k, v in pairs(options) do
