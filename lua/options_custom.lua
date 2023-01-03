@@ -24,12 +24,14 @@ local options = {
   completeopt = "menuone,noselect,menuone",
   filetype = "off",
   syntax = "on",
-  colorcolumn = "80",
+  colorcolumn = "80"
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.cmd[[let g:python_recommended_style = 0]]
 
 
 

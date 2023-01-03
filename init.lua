@@ -36,7 +36,3 @@ require('lualine_custom')
 
 ----------------------BASIC OPTIONS----------------------------
 require('options_custom')
--- filetype off
--- syntax enable
--- set colorcolumn=80
--- let g:python_recommended_style=0 -Use PEP8 style
