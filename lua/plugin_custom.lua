@@ -97,6 +97,9 @@ return packer.startup(function(use)
 	-- Icons
 	use({"kyazdani42/nvim-web-devicons"})
 
+	-- Packer
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

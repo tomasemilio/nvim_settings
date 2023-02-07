@@ -83,6 +83,10 @@ mappings.git_bcommits = function()
 	require('telescope.builtin').git_bcommits()
 end
 
+mappings.git_commits = function()
+	require('telescope.builtin').git_commits()
+end
+
 mappings.diagnostics = function()
 	require('telescope.builtin').diagnostics()
 end

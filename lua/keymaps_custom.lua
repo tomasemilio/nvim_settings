@@ -40,6 +40,7 @@ km('n', '<leader>fb', '<cmd>lua require("telescope_custom").buffers()<cr>', {nor
 km('n', '<leader>cfb', '<cmd>lua require("telescope_custom").current_buffer_fuzzy_find()<cr>', {noremap = true})
 km('n', '<leader>gs', '<cmd>lua require("telescope_custom").git_status()<cr>', {noremap = true})
 km('n', '<leader>gc', '<cmd>lua require("telescope_custom").git_bcommits()<cr>', {noremap = true})
+km('n', '<leader>Gc', '<cmd>lua require("telescope_custom").git_commits()<cr>', {noremap = true})
 km('n', '<leader>gb', '<cmd>lua require("telescope_custom").git_branches()<cr>', {noremap = true})
 km('n', '<leader>dg', '<cmd>lua require("telescope_custom").diagnostics()<cr>', {noremap = true})
 km('n', '<leader>rf', '<cmd>lua require("telescope_custom").lsp_references()<cr>', {noremap = true})
@@ -65,6 +66,11 @@ km('n', '<leader>e', '<cmd>Telescope file_browser<cr>', {noremap = true})
  km('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap=true, silent=true})
  -- km('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {noremap=true, silent=true})
  -- km('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap=true, silent=true})
+--
+
+-- DiffView
+km('n', '<leader>dv', '<cmd>DiffviewOpen<cr>', {noremap = true})
+km('n', '<leader>dc', '<cmd>DiffviewClose<cr>', {noremap = true})
 
 
 -- Split Screen
