@@ -71,6 +71,8 @@ km('n', '<leader>e', '<cmd>Telescope file_browser<cr>', {noremap = true})
 -- DiffView
 km('n', '<leader>dv', '<cmd>DiffviewOpen<cr>', {noremap = true})
 km('n', '<leader>dc', '<cmd>DiffviewClose<cr>', {noremap = true})
+km('n', '<leader>dm', '<cmd>DiffviewOpen ..main<cr>', {noremap = true})
+km('n', '<leader>dV', '<cmd>DiffviewOpen ..HEAD~<cr>', {noremap = true})
 
 
 -- Split Screen
