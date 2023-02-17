@@ -65,7 +65,8 @@ return packer.startup(function(use)
 	use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
 
 	-- Colorscheme
-	use 'folke/tokyonight.nvim'
+	-- use 'folke/tokyonight.nvim'
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- Language support
 	use({'neovim/nvim-lspconfig'})
