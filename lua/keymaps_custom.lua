@@ -4,7 +4,7 @@ local km = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 
 -- Source
-km('n', '<leader><F4>', '<cmd>source ~/.config/nvim/init.vim<CR>', {noremap = true})
+km('n', '<leader><F12>', '<cmd>source ~/.config/nvim/init.vim<CR>', {noremap = true})
 
 -- Indent
 km('v', '<', '<gv', {noremap = true})
@@ -88,6 +88,14 @@ km(
 	'n',
 	'<leader><F5>', 
 	':only | :vs | :vs | :vs<CR>',
+	{noremap = true}
+)
+
+-- Split into 4
+km(
+	'n',
+	'<leader><F4>', 
+	':only | :vs | :sp | :wincmd h | :sp<CR>',
 	{noremap = true}
 )
 
